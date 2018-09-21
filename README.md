@@ -23,7 +23,7 @@ The code sample below shows the usage of the library:
     var MagentoClient = require('magento1-vsbridge-client').MagentoClient;
 
     var options = {
-          'url': 'http://www.test.com/index.php/vsbridge/order'
+          'url': 'http://www.test.com/vsbridge'
     };
     var client = MagentoClient(options);
     client.order(null, cartId, orderData)

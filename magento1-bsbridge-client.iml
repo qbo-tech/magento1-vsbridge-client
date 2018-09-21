@@ -5,6 +5,6 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="magento2-rest-client node_modules" level="project" />
+    <orderEntry type="library" name="magento1-vsbridge-client node_modules" level="project" />
   </component>
 </module>
