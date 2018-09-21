@@ -26,7 +26,7 @@ The code sample below shows the usage of the library:
           'url': 'http://www.test.com/vsbridge'
     };
     var client = MagentoClient(options);
-    client.order(null, cartId, orderData)
+    client.order.create(null, cartId, orderData)
         .then(function (order) {
             assert.equal(order.incrementId, 1);
         })
