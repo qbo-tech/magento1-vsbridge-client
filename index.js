@@ -1,14 +1,15 @@
 'use strict';
 
-var MagentoClient = require('./lib/vsbridge_client').MagentoClient;
-var cart = require('./lib/order');
+var HttpClient = require('./lib/vsbridge_client').HttpClient;
+var order = require('./lib/order');
+var cart = require('./lib/cart');
 
 const MAGENTO_API_VERSION = 'V1';
 
-module.exports.MagentoVSBridgeClient = function (options) {
+module.exports.MagentoClient = function (options) {
     var instance = {
         addMethods (key, module) {
-            var client = MagentoClient(options);
+            var client = HttpClient(options);
             if (module) {
                 if (this[key])
                     this[key] = Object.assign(this[key], module(client))
@@ -18,8 +19,9 @@ module.exports.MagentoVSBridgeClient = function (options) {
         }
     };
     
-    var client = MagentoClient(options);
+    var client = HttpClient(options);
     instance.order = order(client);
+    instance.cart = cart(client);
 
     return instance;
 }
